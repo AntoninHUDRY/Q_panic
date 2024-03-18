@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://8ukrrg3tetb8"]
+[gd_scene load_steps=12 format=3 uid="uid://8ukrrg3tetb8"]
 
+[ext_resource type="PackedScene" uid="uid://bkjcsutuggvnc" path="res://character/player.tscn" id="1_f2hpy"]
 [ext_resource type="Script" path="res://quantum/QuantumController.gd" id="2_3qsxb"]
 [ext_resource type="Script" path="res://quantum/EntangledGroup.gd" id="3_fka2m"]
 [ext_resource type="Script" path="res://Camera/MainCamera.gd" id="4_bbubq"]
@@ -22,6 +23,9 @@ albedo_color = Color(0.235294, 0.388235, 0.756863, 1)
 albedo_color = Color(0.819608, 0.4, 0.290196, 1)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("1_f2hpy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.947924, -0.176239, 0.265291, 0, 0.83295, 0.553348, -0.318496, 0.524532, -0.789574, 8.13527, 8.00387, 0)

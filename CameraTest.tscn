@@ -58,7 +58,7 @@ shape = SubResource("ConvexPolygonShape3D_c6l2y")
 
 [node name="QuantumController" type="Node" parent="." node_paths=PackedStringArray("cameras", "entangled_groups")]
 script = ExtResource("2_3qsxb")
-cameras = [NodePath("../Maincamera")]
+cameras = [NodePath("../player/Maincamera")]
 entangled_groups = [NodePath("../EntangledGroup")]
 
 [node name="EntangledGroup" type="Node" parent="."]
@@ -92,12 +92,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_sbfhf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EntangledGroup/Cube2/RigidBody3D_2"]
 shape = SubResource("BoxShape3D_wghr5")
 
-[node name="Maincamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35676, 0)
-script = ExtResource("4_bbubq")
-
 [node name="player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 1.3, 0)
 script = ExtResource("5_q6hax")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
@@ -111,3 +107,8 @@ script = SubResource("GDScript_nff47")
 [node name="HeadBonker" type="RayCast3D" parent="player"]
 transform = Transform3D(0.999999, 0.00108812, 0.000391769, -0.00108617, 0.999987, -0.00494568, -0.000397136, 0.00494525, 0.999988, 0, 0.248149, 0)
 target_position = Vector3(0, 1, 0)
+
+[node name="Maincamera" type="Camera3D" parent="player" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.468611, 0)
+script = ExtResource("4_bbubq")
+player = NodePath("..")

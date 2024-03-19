@@ -47,7 +47,7 @@ func _physics_process(delta):
 	elif not head_bonked:
 		collision_shape.shape.scale.y += crouch_speed * delta
 		crouched = false
-	collision_shape.shape.height = clamp(collision_shape.shape.height, crouch_height, default_height)
+	collision_shape.shape.scale.y = clamp(collision_shape.shape.scale.y, crouch_height, default_height)
 
 	if Input.is_action_just_pressed("sprint") and is_on_floor() and not crouched:
 		sprinting = true

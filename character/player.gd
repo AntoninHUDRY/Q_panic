@@ -41,11 +41,11 @@ func _physics_process(delta):
 	# handle crouch.
 	crouched = false
 	if Input.is_action_pressed("crouch") and is_on_floor():
-		collision_shape.shape.height -= crouch_speed * delta
+		collision_shape.shape.scale.y -= crouch_speed * delta
 		speed = crouch_speed
 		crouched = true
 	elif not head_bonked:
-		collision_shape.shape.height += crouch_speed * delta
+		collision_shape.shape.scale.y += crouch_speed * delta
 		crouched = false
 	collision_shape.shape.height = clamp(collision_shape.shape.height, crouch_height, default_height)
 

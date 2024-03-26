@@ -32,3 +32,5 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		player.rotate_y(-event.relative.x * LOOKAROUND_SPEED)
 		rotate_x(-event.relative.y * LOOKAROUND_SPEED)
+		rotation.x = clampf(rotation.x, -deg_to_rad(89), deg_to_rad(89))
+

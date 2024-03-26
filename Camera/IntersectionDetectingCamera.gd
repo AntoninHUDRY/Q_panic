@@ -20,6 +20,8 @@ func get_pyramid_points() -> Array[Vector3]:
 
 func _init():
 	area = Area3D.new()
+	area.set_collision_layer_value(1, false)
+	area.set_collision_mask_value(3, true)
 	var collision_shape = CollisionShape3D.new()
 	shape = ConvexPolygonShape3D.new()
 	collision_shape.shape = shape

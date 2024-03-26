@@ -7,9 +7,13 @@ class_name QuantumObject
 var collider: CollisionObject3D
 
 func hide():
+	collider.set_collision_layer_value(4, false)
+	collider.set_collision_mask_value(2, false)
 	collider.hide()
 	
 func show():
+	collider.set_collision_layer_value(4, true)
+	collider.set_collision_mask_value(2, true)
 	collider.show()
 
 # Called when the node enters the scene tree for the first time.

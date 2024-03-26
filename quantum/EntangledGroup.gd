@@ -22,7 +22,7 @@ func set_new_visible(index: int):
 	has_visible_been_seen = false
 	quantum_objects[visible_object].show()
 
-# For now, simply cycle through the entangled objects that are not being observed
+# For now, simply ccolliderycle through the entangled objects that are not being observed
 func handle_observations(intersections: Array[Node3D]):
 	if quantum_objects[visible_object].collider in intersections:
 		has_visible_been_seen = true

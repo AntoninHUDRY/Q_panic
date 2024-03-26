@@ -10,7 +10,8 @@ var entangled_groups: Array[EntangledGroup]
 func get_camera_collisions() -> Array[Node3D]:
 	var collisions: Array[Node3D] = []
 	for camera in cameras:
-		collisions.append_array(camera.get_intersections())
+		if camera.visible:
+			collisions.append_array(camera.get_intersections())
 	return collisions
 
 func _ready():

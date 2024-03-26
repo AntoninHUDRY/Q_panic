@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://8ukrrg3tetb8"]
+[gd_scene load_steps=18 format=3 uid="uid://8ukrrg3tetb8"]
 
 [ext_resource type="Script" path="res://quantum/QuantumController.gd" id="2_3qsxb"]
 [ext_resource type="Script" path="res://quantum/EntangledGroup.gd" id="3_fka2m"]
 [ext_resource type="Script" path="res://Camera/MainCamera.gd" id="4_bbubq"]
 [ext_resource type="Script" path="res://quantum/QuantumObject.gd" id="4_g2727"]
 [ext_resource type="Script" path="res://character/player.gd" id="5_q6hax"]
+[ext_resource type="Script" path="res://Camera/MiniCamera.gd" id="6_104kl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0cwco"]
 size = Vector3(32, 0.1, 32)
@@ -41,6 +42,12 @@ func _process(delta):
 	pass
 "
 
+[sub_resource type="BoxMesh" id="BoxMesh_olewj"]
+size = Vector3(32, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mgkqc"]
+size = Vector3(32, 2, 1)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -58,7 +65,7 @@ shape = SubResource("ConvexPolygonShape3D_c6l2y")
 
 [node name="QuantumController" type="Node" parent="." node_paths=PackedStringArray("cameras", "entangled_groups")]
 script = ExtResource("2_3qsxb")
-cameras = [NodePath("../player/Maincamera")]
+cameras = [NodePath("../player/MainCamera"), NodePath("../SubViewportContainer/SubViewport/MiniCamera")]
 entangled_groups = [NodePath("../EntangledGroup")]
 
 [node name="EntangledGroup" type="Node" parent="."]
@@ -85,7 +92,7 @@ script = ExtResource("4_g2727")
 collider = NodePath("RigidBody3D_2")
 
 [node name="RigidBody3D_2" type="RigidBody3D" parent="EntangledGroup/Cube2"]
-transform = Transform3D(0.471545, 0.423554, -0.773464, -0.668235, 0.74395, 0, 0.575419, 0.516856, 0.63384, -3.23704, 2.70669, -3.3426)
+transform = Transform3D(0.471545, 0.423554, -0.773464, -0.668235, 0.74395, 0, 0.575419, 0.516856, 0.63384, -3.23704, 2.70669, -11.4586)
 collision_layer = 12
 collision_mask = 7
 
@@ -114,7 +121,34 @@ script = SubResource("GDScript_nff47")
 transform = Transform3D(0.999999, 0.00108812, 0.000391769, -0.00108617, 0.999987, -0.00494568, -0.000397136, 0.00494525, 0.999988, 0, 0.248149, 0)
 target_position = Vector3(0, 1, 0)
 
-[node name="Maincamera" type="Camera3D" parent="player" node_paths=PackedStringArray("player")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.468611, 0)
+[node name="MainCamera" type="Camera3D" parent="player" node_paths=PackedStringArray("player", "mini_camera")]
 script = ExtResource("4_bbubq")
 player = NodePath("..")
+mini_camera = NodePath("../../SubViewportContainer/SubViewport/MiniCamera")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_left = 26.0
+offset_top = 348.0
+offset_right = 255.0
+offset_bottom = 624.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(229, 276)
+render_target_update_mode = 4
+
+[node name="MiniCamera" type="Camera3D" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("viewport")]
+script = ExtResource("6_104kl")
+viewport = NodePath("../..")
+
+[node name="Wall" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.905261, -15.1069)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
+mesh = SubResource("BoxMesh_olewj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
+shape = SubResource("BoxShape3D_mgkqc")

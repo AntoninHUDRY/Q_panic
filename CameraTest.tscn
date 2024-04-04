@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://8ukrrg3tetb8"]
+[gd_scene load_steps=19 format=3 uid="uid://8ukrrg3tetb8"]
 
 [ext_resource type="Script" path="res://quantum/QuantumController.gd" id="2_3qsxb"]
 [ext_resource type="Script" path="res://quantum/EntangledGroup.gd" id="3_fka2m"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://quantum/QuantumObject.gd" id="4_g2727"]
 [ext_resource type="Script" path="res://character/player.gd" id="5_q6hax"]
 [ext_resource type="Script" path="res://Camera/MiniCamera.gd" id="6_104kl"]
+[ext_resource type="PackedScene" uid="uid://qfenrsmlfday" path="res://Door.tscn" id="7_deytm"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0cwco"]
 size = Vector3(32, 0.1, 32)
@@ -152,3 +153,6 @@ mesh = SubResource("BoxMesh_olewj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
 shape = SubResource("BoxShape3D_mgkqc")
+
+[node name="Door" parent="." instance=ExtResource("7_deytm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.60169, 0)

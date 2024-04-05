@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh5qx1nox20h2"]
+
+[ext_resource type="Script" path="res://systems/interaction/Interactor.gd" id="1_dor61"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_buajr"]
+
+[node name="PlayerInteractor" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_dor61")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_buajr")
+
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

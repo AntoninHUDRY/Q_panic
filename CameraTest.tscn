@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://8ukrrg3tetb8"]
+[gd_scene load_steps=23 format=3 uid="uid://8ukrrg3tetb8"]
 
 [ext_resource type="Script" path="res://quantum/QuantumController.gd" id="2_3qsxb"]
 [ext_resource type="Script" path="res://quantum/EntangledGroup.gd" id="3_fka2m"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://character/player.gd" id="5_q6hax"]
 [ext_resource type="Script" path="res://Camera/MiniCamera.gd" id="6_104kl"]
 [ext_resource type="PackedScene" uid="uid://dfvgc3hsb18jo" path="res://systems/interaction/PlayerInteractor.tscn" id="6_fa8ls"]
+[ext_resource type="Script" path="res://systems/interaction/PlayerInteractor.gd" id="7_8dpor"]
 [ext_resource type="PackedScene" uid="uid://qfenrsmlfday" path="res://Door.tscn" id="7_deytm"]
 [ext_resource type="PackedScene" uid="uid://d2dpduiy1jbvy" path="res://FloorButton.tscn" id="8_o6ekm"]
 
@@ -133,6 +134,7 @@ player = NodePath("..")
 mini_camera = NodePath("../../SubViewportContainer/SubViewport/MiniCamera")
 
 [node name="PlayerInteractor" parent="player/MainCamera" instance=ExtResource("6_fa8ls")]
+script = ExtResource("7_8dpor")
 
 [node name="CollisionShape3D" parent="player/MainCamera/PlayerInteractor" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.14842)

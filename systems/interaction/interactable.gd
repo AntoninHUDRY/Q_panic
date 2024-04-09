@@ -9,3 +9,15 @@ signal focused(interactor: Interactor)
 signal unfocused(interactor: Interactor)
 # Emitted when Interactor interacts with me
 signal interacted(interactor: Interactor)
+
+
+func _on_focused(interactor):
+	pass # Replace with function body.
+
+
+func _on_interacted(interactor):
+	pass # Replace with function body.
+
+
+func _on_unfocused(interactor):
+	pass # Replace with function body.

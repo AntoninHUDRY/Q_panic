@@ -5,6 +5,7 @@ var is_open = false
 var highlighted = false
 @onready var outline = $MeshInstance3D/outline
 
+
 func close() -> void:
 	is_open = false
 	var tween: Tween = get_tree().create_tween()
@@ -27,10 +28,12 @@ func open_away_from(opener_position: Vector3) -> void:
 	else:
 		open_outward()
 
-func _open_to_rotation(to_rotation: float = 90) -> void:
+func _open_to_rotation(to_rotation: float) -> void:
 	is_open = true
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property(self, "rotation_degrees", Vector3(0, to_rotation, 0), 0.3).set_ease(Tween.EASE_OUT)
+	#tween.tween_property(collision, "rotation_degrees", Vector3(0, to_rotation, 0), 0.3).set_ease(Tween.EASE_OUT)
+	
 	
 func _highlight() -> void :
 	highlighted = true

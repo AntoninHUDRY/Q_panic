@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://8ukrrg3tetb8"]
+[gd_scene load_steps=26 format=3 uid="uid://8ukrrg3tetb8"]
 
 [ext_resource type="Script" path="res://quantum/QuantumController.gd" id="2_3qsxb"]
 [ext_resource type="Script" path="res://quantum/EntangledGroup.gd" id="3_fka2m"]
@@ -10,6 +10,18 @@
 [ext_resource type="Script" path="res://systems/interaction/PlayerInteractor.gd" id="7_8dpor"]
 [ext_resource type="PackedScene" uid="uid://qfenrsmlfday" path="res://Door.tscn" id="7_deytm"]
 [ext_resource type="PackedScene" uid="uid://d2dpduiy1jbvy" path="res://FloorButton.tscn" id="8_o6ekm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n8ree"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ofvrh"]
+sky_material = SubResource("ProceduralSkyMaterial_n8ree")
+
+[sub_resource type="Environment" id="Environment_n4edm"]
+background_mode = 2
+sky = SubResource("Sky_ofvrh")
+tonemap_mode = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_0cwco"]
 size = Vector3(32, 0.1, 32)
@@ -56,6 +68,9 @@ size = Vector3(32, 2, 1)
 size = Vector3(32, 2, 1)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_n4edm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.947924, -0.176239, 0.265291, 0, 0.83295, 0.553348, -0.318496, 0.524532, -0.789574, 8.13527, 8.00387, 0)

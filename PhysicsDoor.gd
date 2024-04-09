@@ -2,6 +2,8 @@ extends RigidBody3D
 
 
 var is_open = false
+var highlighted = false
+@onready var outline = $MeshInstance3D/outline
 
 func close() -> void:
 	is_open = false
@@ -30,10 +32,16 @@ func _open_to_rotation(to_rotation: float = 90) -> void:
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property(self, "rotation_degrees", Vector3(0, to_rotation, 0), 0.3).set_ease(Tween.EASE_OUT)
 	
-	
+func _highlight() -> void :
+	highlighted = true
+	outline.visible = true
 
-func _on_interactable_focused(interactor):
-	pass # Replace with function body.
+func _unhighlight() -> void :
+	highlighted = false
+	outline.visible = false
+
+func _on_interactable_focused(interactor) -> void:
+	_highlight()
 
 
 func _on_interactable_interacted(interactor) -> void:
@@ -43,5 +51,5 @@ func _on_interactable_interacted(interactor) -> void:
 		open_away_from(interactor.position)
 
 
-func _on_interactable_unfocused(interactor):
-	pass # Replace with function body.
+func _on_interactable_unfocused(interactor) -> void:
+	_unhighlight()

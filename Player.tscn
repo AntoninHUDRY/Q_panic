@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://wv3me4e1tqx5"]
+[gd_scene load_steps=10 format=3 uid="uid://wv3me4e1tqx5"]
 
 [ext_resource type="Script" path="res://character/player.gd" id="1_02dj5"]
 [ext_resource type="Script" path="res://Camera/MainCamera.gd" id="2_gul1d"]
 [ext_resource type="PackedScene" uid="uid://dfvgc3hsb18jo" path="res://systems/interaction/PlayerInteractor.tscn" id="3_6vyi1"]
+[ext_resource type="PackedScene" uid="uid://d1jvtmgq1685r" path="res://systems/interaction/cursor.tscn" id="3_l460b"]
 [ext_resource type="Script" path="res://systems/interaction/PlayerInteractor.gd" id="4_831d1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_wio5y"]
@@ -24,8 +25,8 @@ func _process(delta):
 	pass
 "
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rsnyv"]
-size = Vector3(0.541504, 0.335999, 2.28146)
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_a8d2u"]
+length = 3.00648
 
 [node name="player" type="CharacterBody3D" node_paths=PackedStringArray("main_camera")]
 collision_layer = 2
@@ -49,12 +50,14 @@ target_position = Vector3(0, 1, 0)
 script = ExtResource("2_gul1d")
 player = NodePath("..")
 
+[node name="Cursor" parent="MainCamera" instance=ExtResource("3_l460b")]
+
 [node name="PlayerInteractor" parent="MainCamera" node_paths=PackedStringArray("player") instance=ExtResource("3_6vyi1")]
 script = ExtResource("4_831d1")
 player = NodePath("../..")
 
 [node name="CollisionShape3D" parent="MainCamera/PlayerInteractor" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.14842)
-shape = SubResource("BoxShape3D_rsnyv")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.00374)
+shape = SubResource("SeparationRayShape3D_a8d2u")
 
 [editable path="MainCamera/PlayerInteractor"]

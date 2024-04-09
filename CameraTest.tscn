@@ -5,9 +5,9 @@
 [ext_resource type="Script" path="res://quantum/EntangledGroup.gd" id="3_fka2m"]
 [ext_resource type="PackedScene" uid="uid://wv3me4e1tqx5" path="res://Player.tscn" id="4_jlm4d"]
 [ext_resource type="Script" path="res://Camera/MiniCamera.gd" id="6_104kl"]
-[ext_resource type="PackedScene" path="res://Door.tscn" id="7_deytm"]
-[ext_resource type="PackedScene" path="res://FloorButton.tscn" id="8_o6ekm"]
-[ext_resource type="PackedScene" path="res://fix_Door.tscn" id="11_roepf"]
+[ext_resource type="PackedScene" uid="uid://qfenrsmlfday" path="res://Door.tscn" id="7_deytm"]
+[ext_resource type="PackedScene" uid="uid://d2dpduiy1jbvy" path="res://FloorButton.tscn" id="8_o6ekm"]
+[ext_resource type="PackedScene" uid="uid://cfm46bfyyqy6x" path="res://fix_Door.tscn" id="11_roepf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n8ree"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

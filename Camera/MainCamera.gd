@@ -45,17 +45,21 @@ func _physics_process(delta):
 		var space_state = get_world_3d().direct_space_state
 		var screen_center = Vector2(get_viewport().get_visible_rect().size.x / 2, get_viewport().get_visible_rect().size.y / 2)
 		var from = project_ray_origin(screen_center)
-		var to = from + project_ray_normal(screen_center) * SCALE_UP_FACTOR
+		var ray_direction = project_ray_normal(screen_center)
+		var to = from + ray_direction * SCALE_UP_FACTOR
 		var collision_mask = 0b1 # Environment layer
 		var query = PhysicsRayQueryParameters3D.create(from, to, collision_mask)
 		var result = space_state.intersect_ray(query)
 		if "position" in result:
 			mini_camera.global_position = result["position"]
 			var up = Vector3(0,1,0)
-			if result["normal"] == up:
-				up = Vector3(1,0,0)
-			mini_camera.look_at(mini_camera.global_position + result["normal"], up)
-			mini_camera.show_display()
+			var camera_direction = result["normal"]
+			var is_floor = camera_direction == up
+			if is_floor:
+				mini_camera.global_position += up * mini_camera.MOBILE_CAM_HEIGHT
+				camera_direction = ray_direction - ray_direction.dot(up) * up
+			mini_camera.look_at(mini_camera.global_position + camera_direction, up)
+			mini_camera.show_display(is_floor)
 	
 	if Input.is_action_just_pressed("clear_minicam"):
 		mini_camera.hide_display()

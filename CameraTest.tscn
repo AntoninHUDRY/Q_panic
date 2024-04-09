@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://isnyipijubp4" path="res://Cube.tscn" id="3_8b4es"]
 [ext_resource type="Script" path="res://quantum/EntangledGroup.gd" id="3_fka2m"]
 [ext_resource type="PackedScene" uid="uid://wv3me4e1tqx5" path="res://Player.tscn" id="4_jlm4d"]
-[ext_resource type="Script" path="res://Camera/MiniCamera.gd" id="6_104kl"]
+[ext_resource type="PackedScene" uid="uid://0o7uhfxqs1jc" path="res://MiniCamera.tscn" id="5_0h0cn"]
 [ext_resource type="PackedScene" uid="uid://qfenrsmlfday" path="res://Door.tscn" id="7_deytm"]
 [ext_resource type="PackedScene" uid="uid://d2dpduiy1jbvy" path="res://FloorButton.tscn" id="8_o6ekm"]
 [ext_resource type="PackedScene" uid="uid://cfm46bfyyqy6x" path="res://fix_Door.tscn" id="11_roepf"]
@@ -100,8 +100,8 @@ handle_input_locally = false
 size = Vector2i(229, 276)
 render_target_update_mode = 4
 
-[node name="MiniCamera" type="Camera3D" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("viewport")]
-script = ExtResource("6_104kl")
+[node name="MiniCamera" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("player", "viewport") instance=ExtResource("5_0h0cn")]
+player = NodePath("../../../Player")
 viewport = NodePath("../..")
 
 [node name="Wall" type="StaticBody3D" parent="."]

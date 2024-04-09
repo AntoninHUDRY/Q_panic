@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://0o7uhfxqs1jc"]
+
+[ext_resource type="Script" path="res://Camera/MiniCamera.gd" id="1_jchu0"]
+[ext_resource type="Script" path="res://Camera/IntersectionDetectingCamera.gd" id="2_7ofdr"]
+[ext_resource type="PackedScene" uid="uid://cud0dwg8flfpg" path="res://mobile_cam.tscn" id="3_lbyis"]
+[ext_resource type="PackedScene" uid="uid://cpveimp37htr6" path="res://wall_cam.tscn" id="4_pp1lc"]
+
+[node name="MiniCamera" type="Node3D" node_paths=PackedStringArray("camera", "mobile_cam", "wall_cam")]
+script = ExtResource("1_jchu0")
+camera = NodePath("Camera")
+mobile_cam = NodePath("MobileCam")
+wall_cam = NodePath("WallCam")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.214914)
+script = ExtResource("2_7ofdr")
+
+[node name="MobileCam" parent="." instance=ExtResource("3_lbyis")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.313, 0)
+
+[node name="WallCam" parent="." instance=ExtResource("4_pp1lc")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.31, 0)

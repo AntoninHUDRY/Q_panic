@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+class_name Player
+
 @export
 var mini_camera: MiniCamera
 @export
@@ -30,7 +32,7 @@ var gravity = 9.8
 func _ready():
 	main_camera.mini_camera = mini_camera
 	quantum_controller.cameras.append(main_camera)
-	quantum_controller.cameras.append(mini_camera)
+	quantum_controller.cameras.append(mini_camera.camera)
 
 func _physics_process(delta):
 	

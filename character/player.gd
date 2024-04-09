@@ -1,5 +1,13 @@
 extends CharacterBody3D
 
+@export
+var mini_camera: MiniCamera
+@export
+var quantum_controller: QuantumController
+
+@export_group("internal")
+@export
+var main_camera: MainCamera
 
 var default_speed = 5.0
 var crouch_speed = 0.5*default_speed
@@ -19,6 +27,10 @@ var crouched = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
 
+func _ready():
+	main_camera.mini_camera = mini_camera
+	quantum_controller.cameras.append(main_camera)
+	quantum_controller.cameras.append(mini_camera)
 
 func _physics_process(delta):
 	

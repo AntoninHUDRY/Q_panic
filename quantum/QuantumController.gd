@@ -2,6 +2,7 @@ extends Node
 
 class_name QuantumController
 
+@export_group("internal")
 @export
 var cameras: Array[IntersectionDetectingCamera]
 @export

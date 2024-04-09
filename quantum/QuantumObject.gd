@@ -1,20 +1,21 @@
-extends Node
+extends Node3D
 
 class_name QuantumObject
 
 # eg RigidBody3D
+@export_group("Internal")
 @export
 var collider: CollisionObject3D
 
-func hide():
+func quantum_hide():
 	collider.set_collision_layer_value(4, false)
 	collider.set_collision_mask_value(2, false)
-	collider.hide()
+	hide()
 	
-func show():
+func quantum_show():
 	collider.set_collision_layer_value(4, true)
 	collider.set_collision_mask_value(2, true)
-	collider.show()
+	show()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

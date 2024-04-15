@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxmkmxm387wpx"]
+
+[ext_resource type="Texture2D" uid="uid://duphmnqkq4ukd" path="res://textures/dark_background.jpg" id="1_ey1a1"]
+[ext_resource type="Script" path="res://Menu/main_menu.gd" id="1_g06n7"]
+[ext_resource type="PackedScene" uid="uid://8ukrrg3tetb8" path="res://CameraTest.tscn" id="2_6g2v4"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g06n7")
+main_game_packed_scene = ExtResource("2_6g2v4")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ey1a1")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = -72
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 2
+
+[node name="MenuTitle" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.952941, 0.960784, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 64
+text = "Q Panic !"
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Start Game "
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Options"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[connection signal="button_down" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_button_down"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_button_down"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_button_down"]

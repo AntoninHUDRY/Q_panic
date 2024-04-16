@@ -15,7 +15,14 @@ func quantum_hide():
 func quantum_show():
 	collider.set_collision_layer_value(4, true)
 	collider.set_collision_mask_value(2, true)
+	enable_button_interactions()
 	show()
+
+func disable_button_interactions():
+	collider.set_collision_layer_value(5, false)
+	
+func enable_button_interactions():
+	collider.set_collision_layer_value(5, true)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

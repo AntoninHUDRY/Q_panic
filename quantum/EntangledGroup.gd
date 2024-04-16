@@ -20,6 +20,10 @@ func set_new_visible(index: int):
 	quantum_objects[visible_object].quantum_hide()
 	visible_object = index
 	quantum_objects[visible_object].quantum_show()
+	
+	for i in range(0, quantum_objects.size()):
+		if i != visible_object:
+			quantum_objects[i].disable_button_interactions()
 
 # For now, simply ccolliderycle through the entangled objects that are not being observed
 func handle_observations(intersections: Array[Node3D]):
@@ -39,4 +43,5 @@ func handle_observations(intersections: Array[Node3D]):
 		is_in_superposition = true
 		for i in range(0, len(quantum_objects)):
 			quantum_objects[i].quantum_hide()
+			quantum_objects[i].enable_button_interactions()
 	

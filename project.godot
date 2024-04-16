@@ -74,6 +74,7 @@ interact={
 3d_physics/layer_2="Player"
 3d_physics/layer_3="All Quantum Objects"
 3d_physics/layer_4="Visible Quantum Objects"
+3d_physics/layer_5="Button-interaction"
 
 [rendering]
 

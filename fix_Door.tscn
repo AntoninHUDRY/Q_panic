@@ -60,7 +60,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.677218, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_xmwqr")
 
 [connection signal="focused" from="PhysicsDoor/Interactable" to="PhysicsDoor" method="_on_interactable_focused"]
+[connection signal="holded" from="PhysicsDoor/Interactable" to="PhysicsDoor" method="_on_interactable_holded"]
 [connection signal="interacted" from="PhysicsDoor/Interactable" to="PhysicsDoor" method="_on_interactable_interacted"]
+[connection signal="released" from="PhysicsDoor/Interactable" to="PhysicsDoor" method="_on_interactable_released"]
 [connection signal="unfocused" from="PhysicsDoor/Interactable" to="PhysicsDoor" method="_on_interactable_unfocused"]
 
 [editable path="PhysicsDoor/Interactable"]

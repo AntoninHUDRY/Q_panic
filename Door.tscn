@@ -83,7 +83,9 @@ script = ExtResource("2_ns7ht")
 shape = SubResource("ConvexPolygonShape3D_xmwqr")
 
 [connection signal="focused" from="Interactable" to="PhysicsDoor" method="_on_interactable_focused"]
+[connection signal="holded" from="Interactable" to="PhysicsDoor" method="_on_interactable_holded"]
 [connection signal="interacted" from="Interactable" to="PhysicsDoor" method="_on_interactable_interacted"]
+[connection signal="released" from="Interactable" to="PhysicsDoor" method="_on_interactable_released"]
 [connection signal="unfocused" from="Interactable" to="PhysicsDoor" method="_on_interactable_unfocused"]
 
 [editable path="Interactable"]

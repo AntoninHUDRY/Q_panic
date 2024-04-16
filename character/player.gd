@@ -29,6 +29,7 @@ var crouched = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
 
+
 func _ready():
 	main_camera.mini_camera = mini_camera
 	quantum_controller.cameras.append(main_camera)

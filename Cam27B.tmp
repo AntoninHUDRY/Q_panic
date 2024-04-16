@@ -82,44 +82,4 @@ material = SubResource("StandardMaterial3D_ny6dm")
 [node name="Player" parent="." node_paths=PackedStringArray("mini_camera", "quantum_controller") instance=ExtResource("4_jlm4d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39389, 0)
 mini_camera = NodePath("../SubViewportContainer/SubViewport/MiniCamera")
-quantum_controller = NodePath("../QuantumController")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 26.0
-offset_top = -300.0
-offset_right = 255.0
-offset_bottom = -24.0
-grow_vertical = 0
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(229, 276)
-render_target_update_mode = 4
-
-[node name="MiniCamera" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("player", "viewport") instance=ExtResource("5_0h0cn")]
-player = NodePath("../../../Player")
-viewport = NodePath("../..")
-
-[node name="Wall" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.905261, -15.1069)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
-mesh = SubResource("BoxMesh_olewj")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
-shape = SubResource("BoxShape3D_mgkqc")
-
-[node name="Door" parent="." instance=ExtResource("7_deytm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.60169, 0)
-
-[node name="FloorButton" parent="." instance=ExtResource("8_o6ekm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.180907, 5.71613)
-
-[node name="Door2" parent="." instance=ExtResource("11_roepf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99172, 1.59217, 0)
+quantum_controller = NodePath("../Quantu

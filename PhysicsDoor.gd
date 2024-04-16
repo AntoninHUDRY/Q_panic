@@ -56,3 +56,11 @@ func _on_interactable_interacted(interactor) -> void:
 
 func _on_interactable_unfocused(interactor) -> void:
 	_unhighlight()
+
+
+func _on_interactable_holded(interactor):
+	pass # Replace with function body.
+
+
+func _on_interactable_released(interactor):
+	pass # Replace with function body.

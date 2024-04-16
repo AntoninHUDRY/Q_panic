@@ -38,7 +38,7 @@ collision_mask = 3
 
 [node name="Interactable" parent="RigidBody3D" instance=ExtResource("2_tsd5g")]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D/Interactable"]
+[node name="InteractionShape" type="CollisionShape3D" parent="RigidBody3D/Interactable"]
 shape = SubResource("BoxShape3D_1n0ne")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
@@ -46,6 +46,7 @@ mesh = SubResource("BoxMesh_kr0v7")
 surface_material_override/0 = SubResource("StandardMaterial3D_tv781")
 
 [node name="outline" type="MeshInstance3D" parent="RigidBody3D/MeshInstance3D"]
+visible = false
 mesh = SubResource("ArrayMesh_srycm")
 surface_material_override/0 = SubResource("StandardMaterial3D_bi2ik")
 
@@ -53,5 +54,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_bi2ik")
 shape = SubResource("BoxShape3D_wghr5")
 
 [connection signal="focused" from="RigidBody3D/Interactable" to="." method="_on_interactable_focused"]
+[connection signal="holded" from="RigidBody3D/Interactable" to="." method="_on_interactable_holded"]
 [connection signal="interacted" from="RigidBody3D/Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="released" from="RigidBody3D/Interactable" to="." method="_on_interactable_released"]
 [connection signal="unfocused" from="RigidBody3D/Interactable" to="." method="_on_interactable_unfocused"]

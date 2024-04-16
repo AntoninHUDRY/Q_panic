@@ -4,12 +4,18 @@ class_name Interactor
 
 var controller: Node3D
 
+func release(interactable: Interactable) -> void:
+	interactable.released.emit(self)
+
+func hold(interactable: Interactable) -> void:
+	interactable.holded.emit(self)
+	
 func interact(interactable: Interactable) -> void:
 	interactable.interacted.emit(self)
-
+	
 func focus(interactable: Interactable) -> void:
 	interactable.focused.emit(self)
-
+	
 func unfocus(interactable: Interactable) -> void:
 	interactable.unfocused.emit(self)
 	

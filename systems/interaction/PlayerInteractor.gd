@@ -4,6 +4,9 @@ extends Interactor
 
 var cached_closest: Interactable
 
+@onready var hand = $Hand
+var picked_object = null
+
 func _ready() -> void:
 	controller = player
 
@@ -21,6 +24,13 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		if cached_closest:
 			interact(cached_closest)
+	if event.is_action_pressed("hold") and picked_object == null:
+		if cached_closest:
+			picked_object = cached_closest
+			hold(picked_object)
+	if event.is_action_pressed("release") and picked_object != null:
+		release(picked_object)
+		picked_object = null
 			
 func _on_area_exited(area: Interactable) -> void:
 	if cached_closest == area:

@@ -18,7 +18,7 @@ func get_camera_collisions() -> Array[Node3D]:
 func _ready():
 	print("Creating QuantumController with ", cameras.size(), " cameras and ", entangled_groups.size(), " entangled groups")
 
-func _process(_delta):
+func _physics_process(_delta):
 	var collisions = get_camera_collisions()
 	#if len(collisions) > 0:
 	#	print("Collisions: ",collisions)

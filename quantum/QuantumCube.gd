@@ -17,6 +17,17 @@ var holder = null
 var holded = false
 var pull_power = 10
 
+func quantum_hide():
+	collider.set_collision_layer_value(4, false)
+	collider.set_collision_mask_value(2, false)
+	hide()
+	
+func quantum_show():
+	collider.set_collision_layer_value(4, true)
+	collider.set_collision_mask_value(2, true)
+	enable_button_interactions()
+	show()
+
 func _ready():
 	var surface_count = mesh.get_surface_override_material_count()
 	for i in range(surface_count):

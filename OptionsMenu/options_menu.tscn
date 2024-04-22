@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1d6gq4xg16vh"]
+[gd_scene load_steps=3 format=3 uid="uid://d1d6gq4xg16vh"]
 
 [ext_resource type="Script" path="res://OptionsMenu/options_menu.gd" id="1_upsdw"]
+[ext_resource type="PackedScene" uid="uid://be843fttakfge" path="res://OptionsMenu/settings_tab_container.tscn" id="2_eqy5o"]
 
 [node name="Options_Menu" type="Control"]
 layout_mode = 3
@@ -35,9 +36,13 @@ text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Settings_Tab_Container" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_eqy5o")]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 30)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 10
+size_flags_vertical = 8
 text = "Exit"

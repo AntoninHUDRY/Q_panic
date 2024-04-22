@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxmkmxm387wpx"]
+[gd_scene load_steps=4 format=3 uid="uid://dxmkmxm387wpx"]
 
 [ext_resource type="Texture2D" uid="uid://duphmnqkq4ukd" path="res://textures/dark_background.jpg" id="1_ey1a1"]
 [ext_resource type="Script" path="res://Menu/main_menu.gd" id="1_g06n7"]
-[ext_resource type="PackedScene" uid="uid://8ukrrg3tetb8" path="res://CameraTest.tscn" id="2_6g2v4"]
 [ext_resource type="PackedScene" uid="uid://d1d6gq4xg16vh" path="res://OptionsMenu/options_menu.tscn" id="3_plbon"]
 
 [node name="MainMenu" type="Control"]
@@ -13,8 +12,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_g06n7")
-main_game_packed_scene = ExtResource("2_6g2v4")
-option_menu_packed_scene = ExtResource("3_plbon")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -72,6 +69,10 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Quit"
+
+[node name="Options_Menu" parent="." instance=ExtResource("3_plbon")]
+visible = false
+layout_mode = 1
 
 [connection signal="button_down" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_button_down"]

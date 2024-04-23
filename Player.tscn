@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://character/player.gd" id="1_02dj5"]
 [ext_resource type="Script" path="res://Camera/MainCamera.gd" id="2_gul1d"]
 [ext_resource type="PackedScene" uid="uid://dfvgc3hsb18jo" path="res://systems/interaction/PlayerInteractor.tscn" id="3_6vyi1"]
-[ext_resource type="PackedScene" path="res://systems/interaction/cursor.tscn" id="3_l460b"]
 [ext_resource type="Script" path="res://systems/interaction/PlayerInteractor.gd" id="4_831d1"]
+[ext_resource type="PackedScene" uid="uid://03kxb12mtgoc" path="res://hud.tscn" id="5_f0c6c"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_wio5y"]
 
@@ -47,11 +47,8 @@ transform = Transform3D(0.999999, 0.00108812, 0.000391769, -0.00108617, 0.999987
 target_position = Vector3(0, 1, 0)
 
 [node name="MainCamera" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688249, 0)
 script = ExtResource("2_gul1d")
 player = NodePath("..")
-
-[node name="Cursor" parent="MainCamera" instance=ExtResource("3_l460b")]
 
 [node name="PlayerInteractor" parent="MainCamera" node_paths=PackedStringArray("player") instance=ExtResource("3_6vyi1")]
 script = ExtResource("4_831d1")
@@ -63,5 +60,7 @@ shape = SubResource("SeparationRayShape3D_a8d2u")
 
 [node name="Hand" type="Marker3D" parent="MainCamera/PlayerInteractor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="hud" parent="." instance=ExtResource("5_f0c6c")]
 
 [editable path="MainCamera/PlayerInteractor"]

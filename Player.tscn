@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://character/player.gd" id="1_02dj5"]
 [ext_resource type="Script" path="res://Camera/MainCamera.gd" id="2_gul1d"]
 [ext_resource type="PackedScene" uid="uid://dfvgc3hsb18jo" path="res://systems/interaction/PlayerInteractor.tscn" id="3_6vyi1"]
-[ext_resource type="PackedScene" path="res://systems/interaction/cursor.tscn" id="3_l460b"]
+[ext_resource type="PackedScene" uid="uid://d1jvtmgq1685r" path="res://systems/interaction/cursor.tscn" id="3_l460b"]
 [ext_resource type="Script" path="res://systems/interaction/PlayerInteractor.gd" id="4_831d1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_wio5y"]

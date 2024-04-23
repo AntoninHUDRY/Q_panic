@@ -8,10 +8,8 @@ var highlighted = false
 @onready var outline = $MeshInstance3D/outline
 
 func _physics_process(delta):
-	if Singleton.button_down == Singleton.expected_button_down and !is_open:
-		open_inward()
-	if Singleton.button_down != Singleton.expected_button_down and is_open:
-		close()
+	pass
+	
 func close() -> void:
 	is_open = false
 	var tween: Tween = get_tree().create_tween()

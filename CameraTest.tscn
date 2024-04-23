@@ -1,11 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://8ukrrg3tetb8"]
+[gd_scene load_steps=20 format=3 uid="uid://8ukrrg3tetb8"]
 
 [ext_resource type="Script" path="res://quantum/QuantumController.gd" id="2_3qsxb"]
 [ext_resource type="PackedScene" uid="uid://isnyipijubp4" path="res://Cube.tscn" id="3_8b4es"]
 [ext_resource type="Script" path="res://quantum/EntangledGroup.gd" id="3_fka2m"]
 [ext_resource type="PackedScene" uid="uid://wv3me4e1tqx5" path="res://Player.tscn" id="4_jlm4d"]
-[ext_resource type="PackedScene" path="res://MiniCamera.tscn" id="5_0h0cn"]
-[ext_resource type="PackedScene" uid="uid://qfenrsmlfday" path="res://Door.tscn" id="7_deytm"]
+[ext_resource type="PackedScene" uid="uid://0o7uhfxqs1jc" path="res://MiniCamera.tscn" id="5_0h0cn"]
 [ext_resource type="PackedScene" uid="uid://bxp67nejxfwsv" path="res://FloorButton.tscn" id="8_o6ekm"]
 [ext_resource type="PackedScene" uid="uid://cfm46bfyyqy6x" path="res://fix_Door.tscn" id="11_roepf"]
 
@@ -121,14 +120,12 @@ mesh = SubResource("BoxMesh_olewj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
 shape = SubResource("BoxShape3D_mgkqc")
 
-[node name="Door" parent="." instance=ExtResource("7_deytm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.60169, 0)
-
 [node name="FloorButton" parent="." instance=ExtResource("8_o6ekm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.180907, 5.71613)
 
-[node name="Door2" parent="." instance=ExtResource("11_roepf")]
+[node name="Door2" parent="." node_paths=PackedStringArray("buttons") instance=ExtResource("11_roepf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99172, 1.59217, 0)
+buttons = [NodePath("../FloorButton"), NodePath("../FloorButton2")]
 
 [node name="Wall2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.93942, 0.905261, -8.47043)
@@ -140,3 +137,6 @@ mesh = SubResource("BoxMesh_iru4l")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
 shape = SubResource("BoxShape3D_li12p")
+
+[node name="FloorButton2" parent="." instance=ExtResource("8_o6ekm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.50141, 0.110523, -13.2271)

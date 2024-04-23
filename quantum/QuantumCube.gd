@@ -16,6 +16,8 @@ var highlighted = false
 var holder = null
 var holded = false
 var pull_power = 10
+var rotation_power = 0.1
+var rotation_count = 0
 
 func quantum_hide():
 	collider.set_collision_layer_value(4, false)
@@ -38,6 +40,14 @@ func _process(delta):
 		var a = $RigidBody3D.global_transform.origin
 		var b = holder.get_node("Hand").global_transform.origin
 		$RigidBody3D.set_linear_velocity((b-a)*pull_power)
+		
+		
+		if rotation_count != 0:
+			var angle = $RigidBody3D.get_rotation_degrees()
+			$RigidBody3D.set_angular_velocity((-angle)*rotation_power)
+			rotation_count = rotation_count - 1
+			if rotation_count == 0:
+				$RigidBody3D.set_angular_velocity(Vector3(0,0,0))
 
 func _highlight() -> void :
 	highlighted = true
@@ -52,7 +62,8 @@ func _on_interactable_focused(interactor):
 
 
 func _on_interactable_interacted(interactor):
-	pass # Replace with function body.
+	if holded:
+		rotation_count = 200
 
 
 func _on_interactable_unfocused(interactor):
@@ -69,3 +80,6 @@ func _on_interactable_released(interactor):
 	holded = false
 	holder = null
 	$RigidBody3D.set_linear_velocity(Vector3(0,0,0))
+	$RigidBody3D.set_angular_velocity(Vector3(0,0,0))
+	rotation_count = 0
+	

@@ -78,11 +78,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87713, 1.05237, -4.85684)
 material = SubResource("StandardMaterial3D_s6krm")
 
 [node name="Cube2" parent="EntangledGroup" instance=ExtResource("3_8b4es")]
-transform = Transform3D(0.921667, 0.387982, 0, -0.387982, 0.921667, 0, 0, 0, 1, 1.588, 1.21117, -3.78839)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.588, 1.21117, -3.78839)
 material = SubResource("StandardMaterial3D_g63la")
 
 [node name="Cube3" parent="EntangledGroup" instance=ExtResource("3_8b4es")]
-transform = Transform3D(0.586217, 0.620623, 0.520746, -0.810154, 0.449075, 0.376805, 0, -0.642774, 0.766056, -5.17939, 1.16683, -11.9183)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.17939, 1.16683, -11.9183)
 material = SubResource("StandardMaterial3D_ny6dm")
 
 [node name="Player" parent="." node_paths=PackedStringArray("mini_camera", "quantum_controller") instance=ExtResource("4_jlm4d")]

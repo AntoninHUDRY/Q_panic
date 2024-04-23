@@ -14,7 +14,9 @@ func _physics_process(delta):
 	if is_down_next and not is_down:
 		anim.play("PressDown")
 		print("pressed")
+		Singleton.button_down +=1
 	elif not is_down_next and is_down:
 		anim.play("PressUp")
 		print("released")
+		Singleton.button_down += -1
 	is_down = is_down_next

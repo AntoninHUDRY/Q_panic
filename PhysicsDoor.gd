@@ -7,7 +7,9 @@ var is_open = false
 var highlighted = false
 @onready var outline = $MeshInstance3D/outline
 
-
+func _physics_process(delta):
+	pass
+	
 func close() -> void:
 	is_open = false
 	var tween: Tween = get_tree().create_tween()

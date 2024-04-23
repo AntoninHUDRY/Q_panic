@@ -6,7 +6,7 @@ albedo_color = Color(0.807843, 0.211765, 0.203922, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_4pbgs"]
 material = SubResource("StandardMaterial3D_0os6d")
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

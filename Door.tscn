@@ -43,6 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.657218, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.675902, 0, 0)
 collision_layer = 8
 collision_mask = 15
+mass = 62.36
 script = ExtResource("1_i2nwo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PhysicsDoor"]

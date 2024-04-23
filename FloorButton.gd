@@ -1,5 +1,7 @@
 extends StaticBody3D
 
+class_name FloorButton
+
 @onready var anim = $AnimationPlayer
 @onready var area = $Area3D
 

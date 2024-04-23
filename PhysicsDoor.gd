@@ -1,6 +1,8 @@
 extends RigidBody3D
 
+class_name PhysicsDoor
 
+var is_locked = true
 var is_open = false
 var highlighted = false
 @onready var outline = $MeshInstance3D/outline
@@ -32,6 +34,14 @@ func open_away_from(opener_position: Vector3) -> void:
 	else:
 		open_outward()
 
+func unlock():
+	is_locked = false
+	
+func lock():
+	if is_open:
+		close()
+	is_locked = true
+
 func _open_to_rotation(to_rotation: float) -> void:
 	is_open = true
 	var tween: Tween = get_tree().create_tween()
@@ -52,10 +62,12 @@ func _on_interactable_focused(interactor) -> void:
 
 
 func _on_interactable_interacted(interactor) -> void:
-	if is_open:
-		close()
-	else:
-		open_away_from(interactor.position)
+	print("Interacting with door. is_locked: "+str(is_locked) + " is_open: "+ str(is_open))
+	if not is_locked:
+		if is_open:
+			close()
+		else:
+			open_away_from(interactor.position)
 
 
 func _on_interactable_unfocused(interactor) -> void:

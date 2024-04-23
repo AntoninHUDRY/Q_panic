@@ -32,8 +32,7 @@ script = ExtResource("1_dfcxi")
 
 [node name="PhysicsDoor" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.675, 0, 0)
-collision_layer = 10
-collision_mask = 15
+collision_mask = 11
 axis_lock_linear_x = true
 axis_lock_linear_y = true
 axis_lock_linear_z = true

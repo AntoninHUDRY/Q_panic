@@ -30,11 +30,9 @@ func handle_observations(intersections: Array[Node3D]):
 	var some_object_visible = false
 	
 	for i in range(0, quantum_objects.size()):
-		if quantum_objects[i].collider in intersections:
+		if quantum_objects[i].collider in intersections or quantum_objects[i].holded:
 			some_object_visible = true
 			break
-	
-	assert(some_object_visible == (len(intersections) != 0))
 	
 	if is_in_superposition and some_object_visible:
 		is_in_superposition = false

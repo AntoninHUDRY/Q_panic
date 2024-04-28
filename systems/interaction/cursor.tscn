@@ -1,10 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1jvtmgq1685r"]
+[gd_scene load_steps=2 format=3 uid="uid://dohafvs0crbuh"]
 
-[ext_resource type="Texture2D" uid="uid://cdwliv7tg8eqb" path="res://systems/interaction/red_cursor.webp" id="1_ql01n"]
+[ext_resource type="Texture2D" uid="uid://dudgix468b8w7" path="res://textures/cursor.png" id="1_01l64"]
 
 [node name="Cursor" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_ql01n")
+position = Vector2(8, 8)
+texture = ExtResource("1_01l64")

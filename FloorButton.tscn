@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxp67nejxfwsv"]
+[gd_scene load_steps=11 format=3 uid="uid://bxp67nejxfwsv"]
 
 [ext_resource type="Script" path="res://FloorButton.gd" id="1_58ped"]
+[ext_resource type="AudioStream" uid="uid://1w5yl5q85v7j" path="res://audio/button.wav" id="2_lf7f8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_126vw"]
 
@@ -85,6 +86,9 @@ shape = SubResource("BoxShape3D_dx5pd")
 libraries = {
 "": SubResource("AnimationLibrary_ht0wk")
 }
+
+[node name="pressed" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_lf7f8")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

@@ -63,9 +63,16 @@ func _on_interactable_interacted(interactor) -> void:
 	print("Interacting with door. is_locked: "+str(is_locked) + " is_open: "+ str(is_open))
 	if not is_locked:
 		if is_open:
+			if !$close.playing:
+				$close.play()
 			close()
 		else:
+			if !$open.playing:
+				$open.play()
 			open_away_from(interactor.position)
+	else:
+		if !$close.playing:
+				$close.play()
 
 
 func _on_interactable_unfocused(interactor) -> void:

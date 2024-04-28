@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvgjqypytllc3"]
+
+[ext_resource type="Texture2D" uid="uid://wuu8ug7ok3q8" path="res://visual/info.png" id="1_jjd3c"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_up1nj"]
+size = Vector3(3, 1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4jhu"]
+albedo_texture = ExtResource("1_jjd3c")
+uv1_scale = Vector3(3, 2, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7rceh"]
+size = Vector3(3, 1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5b4u"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_up1nj")
+surface_material_override/0 = SubResource("StandardMaterial3D_g4jhu")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, -0.05)
+mesh = SubResource("BoxMesh_7rceh")
+surface_material_override/0 = SubResource("StandardMaterial3D_o5b4u")

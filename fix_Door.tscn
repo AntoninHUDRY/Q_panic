@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfm46bfyyqy6x"]
+[gd_scene load_steps=10 format=3 uid="uid://cfm46bfyyqy6x"]
 
 [ext_resource type="Script" path="res://Door.gd" id="1_dfcxi"]
 [ext_resource type="Script" path="res://PhysicsDoor.gd" id="1_xs0yk"]
 [ext_resource type="PackedScene" uid="uid://cfw31sfi6y2ur" path="res://systems/interaction/interactable.tscn" id="3_qnc5v"]
+[ext_resource type="AudioStream" uid="uid://yl4o0h0ruhtt" path="res://audio/opening.wav" id="4_jwkjs"]
+[ext_resource type="AudioStream" uid="uid://tmhfgwqnpqwy" path="res://audio/closing.wav" id="5_cp0v3"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xmwqr"]
 points = PackedVector3Array(-0.65, -1.5, -0.05, -0.65, -1.5, 0.05, -0.65, 1.5, -0.05, 0.65, -1.5, -0.05, 0.65, -1.5, 0.05, -0.65, 1.5, 0.05, 0.65, 1.5, -0.05, 0.65, 1.5, 0.05)
@@ -59,6 +61,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0chwt")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicsDoor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.677218, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_xmwqr")
+
+[node name="open" type="AudioStreamPlayer3D" parent="PhysicsDoor"]
+stream = ExtResource("4_jwkjs")
+
+[node name="close" type="AudioStreamPlayer3D" parent="PhysicsDoor"]
+stream = ExtResource("5_cp0v3")
 
 [connection signal="focused" from="PhysicsDoor/Interactable" to="PhysicsDoor" method="_on_interactable_focused"]
 [connection signal="holded" from="PhysicsDoor/Interactable" to="PhysicsDoor" method="_on_interactable_holded"]

@@ -1,7 +1,7 @@
 class_name MainMenu
 extends Control
 
-@onready var start_level = preload("res://CameraTest.tscn") as PackedScene
+@onready var start_level = preload("res://level/level 1/level1.tscn") as PackedScene
 
 @onready var start_button = $MarginContainer/VBoxContainer/Start as Button
 @onready var options_button = $MarginContainer/VBoxContainer/Options as Button

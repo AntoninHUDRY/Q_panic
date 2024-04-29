@@ -35,6 +35,10 @@ func _ready():
 	quantum_controller.cameras.append(main_camera)
 	quantum_controller.cameras.append(mini_camera.camera)
 
+func _process(delta):
+	if Input.is_action_just_pressed("exit_game"):
+		get_tree().change_scene_to_file("res://Menu/main_menu.tscn")
+
 func _physics_process(delta):
 	
 	var speed = default_speed

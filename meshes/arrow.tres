@@ -1,0 +1,4 @@
+[gd_resource type="PrismMesh" format=3 uid="uid://6g7g0snphw4p"]
+
+[resource]
+size = Vector3(0.05, 0.05, 0.005)

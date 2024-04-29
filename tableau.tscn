@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://d2646gj4ee6uq"]
+
+[ext_resource type="BoxMesh" uid="uid://ckkff7s5pb5bh" path="res://meshes/board.tres" id="1_7vkt4"]
+[ext_resource type="Script" path="res://BoardPress.gd" id="2_n0t1b"]
+[ext_resource type="PackedScene" uid="uid://cfw31sfi6y2ur" path="res://systems/interaction/interactable.tscn" id="3_wcqby"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t2wyi"]
+points = PackedVector3Array(0.0543558, 0.531746, 1.01587, -0.0408637, -0.515873, -1.01587, 0.0543558, -0.515873, -1.01587, -0.0408637, -0.515873, 1.01587, -0.0408637, 0.531746, -1.01587, 0.0543558, 0.531746, -1.01587, 0.0543558, -0.515873, 1.01587, -0.0408637, 0.531746, 1.01587)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rc1pk"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6be3l"]
+material = SubResource("StandardMaterial3D_rc1pk")
+size = Vector3(0.005, 0.1, 0.1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xjrrt"]
+points = PackedVector3Array(-0.00329365, -0.0507936, -0.0507936, 0.00305556, 0.0507936, 0.0507936, 0.00305556, 0.0507936, -0.0507936, -0.00329365, 0.0507936, 0.0507936, 0.00305556, -0.0507936, 0.0507936, -0.00329365, 0.0507936, -0.0507936, 0.00305556, -0.0507936, -0.0507936, -0.00329365, -0.0507936, 0.0507936)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_74mrw"]
+top_radius = 0.025
+bottom_radius = 0.03
+height = 0.1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3nmdb"]
+points = PackedVector3Array(-0.00208433, -0.0313955, -0.0289953, 0.00239371, -0.0373315, 0.0292818, -0.00208291, -0.0373474, 0.0292943, -0.00358036, 0.0478509, 0.024831, 0.0248286, 0.0478464, -0.00357429, -0.0245619, 0.0479558, -0.00508174, -0.0290505, -0.0479331, 0.00689492, 0.0294336, -0.0480408, -0.00509103, 0.00989622, 0.0479572, -0.0230694, 0.0232284, -0.0476301, 0.0187622, -0.0187481, -0.0484068, -0.0232871, 0.0170305, 0.046954, 0.0184981, -0.0108624, 0.0470383, -0.0226243, 0.017238, -0.0475315, -0.0243488, -0.0183403, 0.0473628, 0.0171774, -0.0185737, -0.0479602, 0.0233883, -0.0277377, -0.0482638, -0.0111496, 0.0199681, 0.0469597, -0.0152473, 0.0244834, 0.0324271, 0.00826318, 0.0112931, -0.0475459, 0.0276459, -0.0198382, 0.0474177, -0.0153976, 0.00689308, -0.04792, -0.0290425, 0.0293794, -0.0479519, 0.00539878, -0.0244932, 0.0478225, 0.00538463, 0.00979199, 0.0474439, 0.0231382, 0.0259143, -0.0367967, -0.0138177, -0.0255567, -0.0338021, 0.014119, -0.0110257, -0.0477352, 0.0277553, -0.0111462, -0.0482493, -0.0277351, -0.00508615, 0.0479438, -0.0245614, -0.0095144, 0.0476682, 0.0232469, -0.0289958, -0.031396, -0.00207866)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_v47pb"]
+points = PackedVector3Array(-0.00208433, -0.0313955, -0.0289953, 0.00239371, -0.0373315, 0.0292818, -0.00208291, -0.0373474, 0.0292943, -0.00358036, 0.0478509, 0.024831, 0.0248286, 0.0478464, -0.00357429, -0.0245619, 0.0479558, -0.00508174, -0.0290505, -0.0479331, 0.00689492, 0.0294336, -0.0480408, -0.00509103, 0.00989622, 0.0479572, -0.0230694, 0.0232284, -0.0476301, 0.0187622, -0.0187481, -0.0484068, -0.0232871, 0.0170305, 0.046954, 0.0184981, -0.0108624, 0.0470383, -0.0226243, 0.017238, -0.0475315, -0.0243488, -0.0183403, 0.0473628, 0.0171774, -0.0185737, -0.0479602, 0.0233883, -0.0277377, -0.0482638, -0.0111496, 0.0199681, 0.0469597, -0.0152473, 0.0244834, 0.0324271, 0.00826318, 0.0112931, -0.0475459, 0.0276459, -0.0198382, 0.0474177, -0.0153976, 0.00689308, -0.04792, -0.0290425, 0.0293794, -0.0479519, 0.00539878, -0.0244932, 0.0478225, 0.00538463, 0.00979199, 0.0474439, 0.0231382, 0.0259143, -0.0367967, -0.0138177, -0.0255567, -0.0338021, 0.014119, -0.0110257, -0.0477352, 0.0277553, -0.0111462, -0.0482493, -0.0277351, -0.00508615, 0.0479438, -0.0245614, -0.0095144, 0.0476682, 0.0232469, -0.0289958, -0.031396, -0.00207866)
+
+[node name="tableau" type="Node3D"]
+
+[node name="Board" type="StaticBody3D" parent="."]
+
+[node name="BoardMesh" type="MeshInstance3D" parent="Board"]
+layers = 3
+mesh = ExtResource("1_7vkt4")
+
+[node name="BoardCollision" type="CollisionShape3D" parent="Board"]
+shape = SubResource("ConvexPolygonShape3D_t2wyi")
+
+[node name="RightPress" type="StaticBody3D" parent="."]
+script = ExtResource("2_n0t1b")
+
+[node name="PressMesh" type="MeshInstance3D" parent="RightPress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0336656, -0.331591, -0.67248)
+mesh = SubResource("BoxMesh_6be3l")
+
+[node name="PressCollision" type="CollisionShape3D" parent="RightPress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0336656, -0.331591, -0.67248)
+shape = SubResource("ConvexPolygonShape3D_xjrrt")
+
+[node name="Interactable" parent="RightPress" instance=ExtResource("3_wcqby")]
+
+[node name="leftPress" type="StaticBody3D" parent="."]
+script = ExtResource("2_n0t1b")
+
+[node name="PressMesh" type="MeshInstance3D" parent="leftPress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0336656, -0.331591, -0.520612)
+mesh = SubResource("BoxMesh_6be3l")
+
+[node name="PressCollision" type="CollisionShape3D" parent="leftPress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0336656, -0.331591, -0.520612)
+shape = SubResource("ConvexPolygonShape3D_xjrrt")
+
+[node name="Interactable" parent="leftPress" instance=ExtResource("3_wcqby")]
+
+[node name="RightFoot" type="StaticBody3D" parent="."]
+
+[node name="FootMesh" type="MeshInstance3D" parent="RightFoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.55, -0.95)
+mesh = SubResource("CylinderMesh_74mrw")
+
+[node name="FootCollision" type="CollisionShape3D" parent="RightFoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.55, -0.95)
+shape = SubResource("ConvexPolygonShape3D_3nmdb")
+
+[node name="LeftFoot" type="StaticBody3D" parent="."]
+
+[node name="FootMesh" type="MeshInstance3D" parent="LeftFoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.55, 0.95)
+mesh = SubResource("CylinderMesh_74mrw")
+
+[node name="FootCollision" type="CollisionShape3D" parent="LeftFoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.55, 0.95)
+shape = SubResource("ConvexPolygonShape3D_v47pb")
+
+[connection signal="focused" from="RightPress/Interactable" to="RightPress" method="_on_interactable_focused"]
+[connection signal="interacted" from="RightPress/Interactable" to="RightPress" method="_on_interactable_interacted"]
+[connection signal="unfocused" from="RightPress/Interactable" to="RightPress" method="_on_interactable_unfocused"]
+[connection signal="focused" from="leftPress/Interactable" to="leftPress" method="_on_interactable_focused"]
+[connection signal="interacted" from="leftPress/Interactable" to="leftPress" method="_on_interactable_interacted"]
+[connection signal="unfocused" from="leftPress/Interactable" to="leftPress" method="_on_interactable_unfocused"]

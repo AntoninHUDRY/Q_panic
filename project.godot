@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 Singleton="*res://singleton.gd"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
+
 [input]
 
 up={

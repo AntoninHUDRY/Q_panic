@@ -14,6 +14,8 @@ func _ready():
 	print("Quantum objects: ", quantum_objects)
 	for i in range(0, len(quantum_objects)):
 		quantum_objects[i].quantum_hide()
+	if len(quantum_objects) == 1:
+		quantum_objects[0].quantum_show()
 
 func set_new_visible(index: int):
 	print("Changing visible object from ", visible_object, " to ", index)
@@ -27,6 +29,9 @@ func set_new_visible(index: int):
 
 # For now, simply ccolliderycle through the entangled objects that are not being observed
 func handle_observations(intersections: Array[Node3D]):
+	if len(quantum_objects) <= 1:
+		return
+	
 	var some_object_visible = false
 	
 	for i in range(0, quantum_objects.size()):

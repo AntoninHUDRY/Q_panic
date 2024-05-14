@@ -10,6 +10,9 @@ func release(interactable: Interactable) -> void:
 func hold(interactable: Interactable) -> void:
 	interactable.holded.emit(self)
 	
+func throw(interactable: Interactable) -> void:
+	interactable.thrown.emit(self)
+	
 func interact(interactable: Interactable) -> void:
 	interactable.interacted.emit(self)
 	

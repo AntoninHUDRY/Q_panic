@@ -4,6 +4,8 @@ class_name Door
 
 @export
 var buttons: Array[FloorButton] = []
+@export
+var false_buttons : Array[FloorButton] = []
 
 @onready
 var doorColloder: PhysicsDoor = $PhysicsDoor
@@ -15,9 +17,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	for button in buttons:
-		if not button.is_down:
-			doorColloder.lock()
-			return
+	if not false_buttons.is_empty():
+		for false_button in false_buttons:
+			if false_button.is_down:
+				doorColloder.lock()
+				return
+	if not buttons.is_empty():
+		for button in buttons:
+			if not button.is_down:
+				doorColloder.lock()
+				return
 	doorColloder.unlock()
 	

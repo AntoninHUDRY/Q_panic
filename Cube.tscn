@@ -57,4 +57,5 @@ shape = SubResource("BoxShape3D_wghr5")
 [connection signal="holded" from="RigidBody3D/Interactable" to="." method="_on_interactable_holded"]
 [connection signal="interacted" from="RigidBody3D/Interactable" to="." method="_on_interactable_interacted"]
 [connection signal="released" from="RigidBody3D/Interactable" to="." method="_on_interactable_released"]
+[connection signal="thrown" from="RigidBody3D/Interactable" to="." method="_on_interactable_thrown"]
 [connection signal="unfocused" from="RigidBody3D/Interactable" to="." method="_on_interactable_unfocused"]

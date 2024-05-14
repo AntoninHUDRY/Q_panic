@@ -11,6 +11,8 @@ signal unfocused(interactor: Interactor)
 signal interacted(interactor: Interactor)
 # Emitted when Interactor holds me
 signal holded(interactor: Interactor)
+# Emitted when interactor throws me
+signal thrown (interactor: Interactor)
 # Emitted when Interactor releases me
 signal released(interactor: Interactor)
 

@@ -24,6 +24,10 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		if cached_closest:
 			interact(cached_closest)
+	if event.is_action_pressed("throw"):
+		if cached_closest:
+			throw(cached_closest)
+			picked_object = null
 	if event.is_action_pressed("hold") and picked_object == null:
 		if cached_closest:
 			picked_object = cached_closest

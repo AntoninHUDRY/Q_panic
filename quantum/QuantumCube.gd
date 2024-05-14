@@ -18,6 +18,7 @@ var holded = false
 var pull_power = 10
 var rotation_power = 0.1
 var rotation_count = 0
+var throw_power = 3
 
 func quantum_hide():
 	collider.set_collision_layer_value(4, false)
@@ -83,3 +84,10 @@ func _on_interactable_released(interactor):
 	$RigidBody3D.set_angular_velocity(Vector3(0,0,0))
 	rotation_count = 0
 	
+func _on_interactable_thrown(interactor):
+	var a = $RigidBody3D.global_transform.origin
+	var b = holder.global_transform.origin
+	holded = false
+	holder = null
+	$RigidBody3D.set_linear_velocity(-(b-a)*throw_power)
+	pass # Replace with function body.

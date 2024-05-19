@@ -14,7 +14,7 @@ var main_camera: MainCamera
 var default_speed = 5.0
 var crouch_speed = 0.5*default_speed
 var sprint_speed = 1.5*default_speed
-var jump_velocity = 4.5
+var jump_velocity = 4.0
 
 
 var default_height = 1

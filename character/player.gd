@@ -29,15 +29,28 @@ var crouched = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
 
+# Preload the pause menu scene
+var pause_menu_scene := preload("res://Menu/pause_menu.tscn")
+var pause_menu_instance: Node
 
 func _ready():
 	main_camera.mini_camera = mini_camera
 	quantum_controller.cameras.append(main_camera)
 	quantum_controller.cameras.append(mini_camera.camera)
+	# Instance the pause menu from the preloaded scene
+	pause_menu_instance = pause_menu_scene.instantiate()
+	# Add the pause menu instance to the current scene
+	add_child(pause_menu_instance)
 
 func _process(delta):
 	if Input.is_action_just_pressed("exit_game"):
-		get_tree().change_scene_to_file("res://Menu/main_menu.tscn")
+		# Pause scene
+		get_tree().paused = true
+		# Show menu
+		pause_menu_instance.visible = true
+		# release the mouse
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 
 func _physics_process(delta):
 	
@@ -92,3 +105,6 @@ func _physics_process(delta):
 
 func _on_button_pressed():
 	$MainCamera/tuto.visible = !$MainCamera/tuto.visible
+
+
+

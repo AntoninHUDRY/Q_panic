@@ -52,9 +52,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688249, 0)
 script = ExtResource("2_gul1d")
 player = NodePath("..")
 
-[node name="PlayerInteractor" parent="MainCamera" node_paths=PackedStringArray("player") instance=ExtResource("3_6vyi1")]
+[node name="PlayerInteractor" parent="MainCamera" instance=ExtResource("3_6vyi1")]
 script = ExtResource("4_831d1")
-player = NodePath("")
 
 [node name="CollisionShape3D" parent="MainCamera/PlayerInteractor" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.00374)

@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi2ydsijouhea"]
+
+[ext_resource type="Script" path="res://Menu/pause_menu.gd" id="1_5gdok"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 2
+visible = false
+script = ExtResource("1_5gdok")
+
+[node name="Menu" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.00784314, 0, 1)
+
+[node name="Label" type="Label" parent="Menu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -103.0
+offset_right = 103.0
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.992157, 0.933333, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Pause Menu"
+
+[node name="ResumeButton" type="Button" parent="Menu/Label"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 267.0
+offset_right = 149.0
+offset_bottom = 310.0
+theme_override_colors/font_color = Color(0.992157, 0.933333, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Resume"
+
+[node name="QuitButton" type="Button" parent="Menu/Label"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 340.0
+offset_right = 189.0
+offset_bottom = 383.0
+theme_override_colors/font_color = Color(0.992157, 0.933333, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Quit To Main"
+
+[connection signal="pressed" from="Menu/Label/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Menu/Label/QuitButton" to="." method="_on_quit_button_pressed"]

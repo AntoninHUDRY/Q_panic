@@ -41,6 +41,8 @@ func _ready():
 	pause_menu_instance = pause_menu_scene.instantiate()
 	# Add the pause menu instance to the current scene
 	add_child(pause_menu_instance)
+	# Make sure the pause menu is hidden initially
+	pause_menu_instance.visible = false
 
 func _process(delta):
 	if Input.is_action_just_pressed("exit_game"):

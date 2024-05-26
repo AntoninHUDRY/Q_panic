@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bbuyodob52hai"]
+[gd_scene load_steps=23 format=3 uid="uid://ctk3ymt1pstt0"]
 
 [ext_resource type="Material" uid="uid://wvk2co75msi3" path="res://level/level 4/tile.tres" id="1_6finj"]
 [ext_resource type="Script" path="res://quantum/QuantumController.gd" id="2_fml8i"]
@@ -46,15 +46,11 @@ size = Vector3(16, 2, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_li12p"]
 size = Vector3(16, 2, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0nhvg"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yenq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6krm"]
+albedo_color = Color(0.254902, 0.356863, 0.729412, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qn8ag"]
 albedo_color = Color(0.498039, 0.701961, 0.0705882, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6krm"]
-albedo_color = Color(0.254902, 0.356863, 0.729412, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -131,21 +127,26 @@ surface_material_override/0 = ExtResource("1_6finj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
 shape = SubResource("BoxShape3D_mgkqc")
 
-[node name="SmallWall" type="StaticBody3D" parent="."]
-transform = Transform3D(-2.53526e-08, 0, 0.3, 0, 0.85, 0, -0.58, 0, -1.31134e-08, -4.125, 0.53, 6.709)
+[node name="Wall3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 20.5, 0.905, -24)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SmallWall"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
 mesh = SubResource("BoxMesh_olewj")
 surface_material_override/0 = ExtResource("1_6finj")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SmallWall"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
 shape = SubResource("BoxShape3D_mgkqc")
 
 [node name="Door2" parent="." node_paths=PackedStringArray("buttons") instance=ExtResource("5_xu1vd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.846, 1.5, -2.5)
 buttons = [NodePath("../PolyButton")]
+
+[node name="Door3" parent="." node_paths=PackedStringArray("buttons", "false_buttons") instance=ExtResource("5_xu1vd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.846, 1.5, -23.5356)
+buttons = [NodePath("../FloorButton"), NodePath("../FloorButton2")]
+false_buttons = [NodePath("../PolyButton")]
 
 [node name="Wall2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -4.8, 0.905, -3)
@@ -159,27 +160,39 @@ surface_material_override/0 = ExtResource("1_6finj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
 shape = SubResource("BoxShape3D_li12p")
 
-[node name="SeparationWall" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -4.8, 0.802031, 6.4799)
+[node name="Wall5" type="StaticBody3D" parent="."]
+transform = Transform3D(-1.09278e-08, 0, 1, 0, 2, 0, -0.25, 0, -4.37114e-08, 5.02737, 0.905, -5.44116)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SeparationWall"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
 mesh = SubResource("BoxMesh_iru4l")
 surface_material_override/0 = ExtResource("1_6finj")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SeparationWall"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
 shape = SubResource("BoxShape3D_li12p")
 
-[node name="SeparationWall2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -4.8, 0.802031, 15.4301)
+[node name="Wall6" type="StaticBody3D" parent="."]
+transform = Transform3D(-1.09278e-08, 0, 1, 0, 2, 0, -0.25, 0, -4.37114e-08, 2.66858, 0.905, -5.44116)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SeparationWall2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
 mesh = SubResource("BoxMesh_iru4l")
 surface_material_override/0 = ExtResource("1_6finj")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SeparationWall2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
+shape = SubResource("BoxShape3D_li12p")
+
+[node name="Wall4" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -4.8, 0.905, -24)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
+mesh = SubResource("BoxMesh_iru4l")
+surface_material_override/0 = ExtResource("1_6finj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
 shape = SubResource("BoxShape3D_li12p")
 
@@ -189,7 +202,7 @@ autoplay = true
 
 [node name="NextButton" parent="." instance=ExtResource("7_p5v8c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.84927, -0.00999981, -44.829)
-next_level_path = "res://level/level 6/level6.tscn"
+next_level_path = "res://level/level 8/level8.tscn"
 
 [node name="FloorButton" parent="." instance=ExtResource("8_eay6h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.69405, 0, -16.8614)
@@ -197,114 +210,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.69405, 0, -16.8614)
 [node name="FloorButton2" parent="." instance=ExtResource("8_eay6h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118644, 0, -16.8614)
 
-[node name="WCube2" parent="." instance=ExtResource("10_o1xi3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64268, -13.4689)
-
-[node name="EntangledGroup2" type="Node" parent="."]
-script = ExtResource("9_xe1l6")
-
-[node name="Cube" parent="EntangledGroup2" instance=ExtResource("10_o1xi3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19032, 3.3036)
-material = SubResource("StandardMaterial3D_0nhvg")
-
-[node name="Cube2" parent="EntangledGroup2" instance=ExtResource("10_o1xi3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67644, 10.8533)
-material = SubResource("StandardMaterial3D_4yenq")
-
 [node name="EntangledGroup" type="Node" parent="."]
 script = ExtResource("9_xe1l6")
 
 [node name="Cube" parent="EntangledGroup" instance=ExtResource("10_o1xi3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.76313, 1.42701, -5.86676)
-material = SubResource("StandardMaterial3D_qn8ag")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.34787, 1.64268, -13.4689)
 
-[node name="Cube2" parent="EntangledGroup" instance=ExtResource("10_o1xi3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.59658, 2.50271, 3.8608)
+[node name="EntangledGroup2" type="Node" parent="."]
+script = ExtResource("9_xe1l6")
+
+[node name="Cube2" parent="EntangledGroup2" instance=ExtResource("10_o1xi3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.59658, 2.55576, 3.8608)
 material = SubResource("StandardMaterial3D_s6krm")
+
+[node name="Cube" parent="EntangledGroup2" instance=ExtResource("10_o1xi3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.43512, 1.42701, -4.98799)
+material = SubResource("StandardMaterial3D_qn8ag")
 
 [node name="PolyButton" parent="." instance=ExtResource("11_ogt5f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.61203, 0, 3.86151)
-
-[node name="ButtonInBarrier" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.23154, 0.53, 1.8216)
-
-[node name="wall1" type="StaticBody3D" parent="ButtonInBarrier"]
-transform = Transform3D(0.06, 0, 0, 0, 0.79, 0, 0, 0, 0.115, 0, 0, 1)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonInBarrier/wall1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
-mesh = SubResource("BoxMesh_olewj")
-surface_material_override/0 = ExtResource("1_6finj")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonInBarrier/wall1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
-shape = SubResource("BoxShape3D_mgkqc")
-
-[node name="wall3" type="StaticBody3D" parent="ButtonInBarrier"]
-transform = Transform3D(-2.62268e-09, 0, 0.115, 0, 0.79, 0, -0.06, 0, -5.02681e-09, -0.9, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonInBarrier/wall3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
-mesh = SubResource("BoxMesh_olewj")
-surface_material_override/0 = ExtResource("1_6finj")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonInBarrier/wall3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
-shape = SubResource("BoxShape3D_mgkqc")
-
-[node name="wall2" type="StaticBody3D" parent="ButtonInBarrier"]
-transform = Transform3D(0.06, 0, 0, 0, 0.79, 0, 0, 0, 0.115, 0, 0, -1)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonInBarrier/wall2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
-mesh = SubResource("BoxMesh_olewj")
-surface_material_override/0 = ExtResource("1_6finj")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonInBarrier/wall2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
-shape = SubResource("BoxShape3D_mgkqc")
-
-[node name="FloorButton" parent="ButtonInBarrier" instance=ExtResource("8_eay6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.529, 0)
-
-[node name="ButtonInBarrier2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.23154, 0.53, 10.9574)
-
-[node name="wall1" type="StaticBody3D" parent="ButtonInBarrier2"]
-transform = Transform3D(0.06, 0, 0, 0, 0.79, 0, 0, 0, 0.115, 0, 0, 1)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonInBarrier2/wall1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
-mesh = SubResource("BoxMesh_olewj")
-surface_material_override/0 = ExtResource("1_6finj")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonInBarrier2/wall1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
-shape = SubResource("BoxShape3D_mgkqc")
-
-[node name="wall3" type="StaticBody3D" parent="ButtonInBarrier2"]
-transform = Transform3D(-2.62268e-09, 0, 0.115, 0, 0.79, 0, -0.06, 0, -5.02681e-09, -0.9, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonInBarrier2/wall3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
-mesh = SubResource("BoxMesh_olewj")
-surface_material_override/0 = ExtResource("1_6finj")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonInBarrier2/wall3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
-shape = SubResource("BoxShape3D_mgkqc")
-
-[node name="wall2" type="StaticBody3D" parent="ButtonInBarrier2"]
-transform = Transform3D(0.06, 0, 0, 0, 0.79, 0, 0, 0, 0.115, 0, 0, -1)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonInBarrier2/wall2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
-mesh = SubResource("BoxMesh_olewj")
-surface_material_override/0 = ExtResource("1_6finj")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonInBarrier2/wall2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
-shape = SubResource("BoxShape3D_mgkqc")
-
-[node name="FloorButton" parent="ButtonInBarrier2" instance=ExtResource("8_eay6h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.529, 0)

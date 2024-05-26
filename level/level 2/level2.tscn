@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://quantum/QuantumController.gd" id="2_yubqo"]
 [ext_resource type="Script" path="res://quantum/EntangledGroup.gd" id="3_oas5w"]
 [ext_resource type="PackedScene" uid="uid://wv3me4e1tqx5" path="res://Player.tscn" id="4_3igbs"]
-[ext_resource type="PackedScene" path="res://MiniCamera.tscn" id="5_54cab"]
+[ext_resource type="PackedScene" uid="uid://0o7uhfxqs1jc" path="res://MiniCamera.tscn" id="5_54cab"]
 [ext_resource type="PackedScene" uid="uid://cfm46bfyyqy6x" path="res://fix_Door.tscn" id="6_rwerq"]
 [ext_resource type="AudioStream" uid="uid://84n4ipgb7sso" path="res://audio/Ambiance_Wind_Forest_Loop_Stereo.mp3" id="7_ahkgu"]
 [ext_resource type="PackedScene" uid="uid://knjrtafv34qd" path="res://NextLevelButton.tscn" id="8_s2tox"]

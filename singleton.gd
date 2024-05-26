@@ -3,6 +3,7 @@ extends Node
 
 #toute les variables inscrites ici sont accessibles dans n'importe quel noeud.
 #il suffit d'écrire Singleton.le_nom_de_la_variable
-
+var listening = false
 var button_down = 0
 var expected_button_down = 3
+

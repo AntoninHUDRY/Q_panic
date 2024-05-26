@@ -1,0 +1,380 @@
+[gd_scene load_steps=32 format=3 uid="uid://61avi7wrs31e"]
+
+[ext_resource type="Script" path="res://meshes/phonebooth.gd" id="1_yd7pe"]
+[ext_resource type="AudioStream" uid="uid://cajjtpxexni3j" path="res://audio/rotary-phone-ring-medium-103869.mp3" id="2_0gmby"]
+[ext_resource type="AudioStream" uid="uid://ch6lrg5iphue1" path="res://audio/phone-pick-up-46796.mp3" id="3_anasi"]
+[ext_resource type="AudioStream" uid="uid://dmi4kj4uilhg7" path="res://audio/voicelines/lv1_1.mp3" id="4_xrapp"]
+[ext_resource type="AudioStream" uid="uid://bolbeonppwkln" path="res://audio/voicelines/lv1_2.mp3" id="5_k3djj"]
+[ext_resource type="AudioStream" uid="uid://cs60kwkipmybv" path="res://audio/voicelines/lv2_1.mp3" id="6_pu0hw"]
+[ext_resource type="AudioStream" uid="uid://dsy32y1ewav2q" path="res://audio/voicelines/lv2_2.mp3" id="7_p6pjw"]
+[ext_resource type="AudioStream" uid="uid://dsy5ja6sgx5ag" path="res://audio/voicelines/lv3.mp3" id="8_b2t0b"]
+[ext_resource type="AudioStream" uid="uid://bgo6q7xfqv62b" path="res://audio/voicelines/lv4.mp3" id="9_sms6j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_y17j6"]
+size = Vector3(0.05, 0.1, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34e08"]
+albedo_color = Color(0.556863, 0.14902, 0.152941, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c4dlb"]
+size = Vector3(0.1, 1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wvc6"]
+albedo_color = Color(0.854902, 0.854902, 0.854902, 1)
+metallic = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_pj22m"]
+size = Vector3(0.05, 0.4, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6x0m"]
+albedo_color = Color(0.584661, 0.147219, 0.164815, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n51wr"]
+size = Vector3(0.2, 1.8, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxfjo"]
+albedo_color = Color(0.239216, 0.239216, 0.239216, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_af11n"]
+size = Vector3(0.5, 1, 0.01)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5y2ph"]
+albedo_color = Color(0.258824, 0.372549, 0.447059, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mhh8j"]
+size = Vector3(0.5, 0.01, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7ejo"]
+albedo_color = Color(0.258824, 0.372549, 0.447059, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r83th"]
+size = Vector3(0.452606, 1.72339, 0.55127)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b2t66"]
+
+[sub_resource type="Animation" id="Animation_b7d3u"]
+resource_name = "audio1"
+length = 59.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8, 2.9, 6.2, 6.7817, 7.63903, 8.97881, 10.3, 13.8, 14.5, 17.6, 26.3, 28, 30.6, 33.5, 37.4, 43.3, 49.1, 54.2, 57.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "hmmmm....", "hmmmm.... This... Is not reallyyyy....", "Saying anything", "This is jumping", "You realise that?", "You realise that?
+Maybe brain damages from miniaturisation?", "Yea.. Yea.. Maybe
+Maybe brain damages from miniaturisation?", "Don't move", "I need to read a bunch of rights to you", "I have them under my eyes
+Wait just a little bit
+", "Welcome to NanoLand™!
+", "Following the hypersurpopulation of earth,
+", "it became quite obvious that we need to go smaller
+", "and this is where you come into play", "Nanoland™ is not responsible for... blablabla...", "No health insurance will be provided", "Basicaly we need to do a bunch of test 
+and you will be the one to do them", "And we will start very easy with our top of the art button", "So.. just go on it and have fun!"]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../audio1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_k3djj")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_2aiih"]
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.46103, 2.76676, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "Hello?", "Hello? Helllooo?", "Can you hear me?", "If so, say something..."]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../audio1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_xrapp")
+}],
+"times": PackedFloat32Array(-0.1)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_04cd0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["hmmmm...."]
+}
+
+[sub_resource type="Animation" id="Animation_nci6w"]
+resource_name = "audio2"
+length = 13.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8.7, 11.2, 12.4, 13.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["*chatting*", "Hi! hmm.. sorry...", "Welcome back!", "Did you sleep well?", ""]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../audio1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_pu0hw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_l4qju"]
+resource_name = "audi22"
+length = 20.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.1, 5.3, 9.8, 13.7, 16.8, 16.9, 17.3, 18.5, 19.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "This is still jumping....", "Gosh... firing that neurosurgeon was a bad idea", "After a few weeks of nonstop, sleepless nights of work,", "our engineer ended up with a revolutionary tech:", "The", "The Door!", "", "Come on", "Try it"]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../audio1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_p6pjw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_nlxl4"]
+resource_name = "audio3"
+length = 9.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 4, 6.9, 8.1, 9.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "After consulting with a bunch of psychologists", "It became quite obvious that we needed to check your IQ", "This puzzle was solved by monkies", "So do not disappoint us", ""]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../audio1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_b2t0b")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_5511s"]
+resource_name = "audio4"
+length = 32.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 2, 3.9, 7, 11, 12.9, 16.7, 19.1, 23.4, 24.3, 25.6, 26.6, 28, 30.4504, 31.217),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "Heyyyy... Buddy", "You're doing great I suppose?", "Don't try to answer that", "Our physicist came back from vacations.", "Before going on, she warned us", "About quantum phenomenas on that scale", "To be honest we did not really considered it", "But apparently it's a bunch of things that", "are complicated", "And I have no idea what it means", "But hey!", "She sent us a graph ", "So maybe you will be able to get it with it", "Anyway...", "Anyway... good luck"]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../audio1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_sms6j")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7oc24"]
+_data = {
+"RESET": SubResource("Animation_04cd0"),
+"audi22": SubResource("Animation_l4qju"),
+"audio1": SubResource("Animation_2aiih"),
+"audio12": SubResource("Animation_b7d3u"),
+"audio2": SubResource("Animation_nci6w"),
+"audio3": SubResource("Animation_nlxl4"),
+"audio4": SubResource("Animation_5511s")
+}
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_yd7pe")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0777782, -0.142002, 0.000271452)
+mesh = SubResource("BoxMesh_y17j6")
+skeleton = NodePath("../MeshInstance3D2")
+surface_material_override/0 = SubResource("StandardMaterial3D_34e08")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_c4dlb")
+surface_material_override/0 = SubResource("StandardMaterial3D_4wvc6")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.177406, 0)
+mesh = SubResource("BoxMesh_y17j6")
+surface_material_override/0 = SubResource("StandardMaterial3D_34e08")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125504, 0.014898, 0)
+mesh = SubResource("BoxMesh_pj22m")
+surface_material_override/0 = SubResource("StandardMaterial3D_a6x0m")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.141087, -0.392225, 0)
+mesh = SubResource("BoxMesh_n51wr")
+surface_material_override/0 = SubResource("StandardMaterial3D_jxfjo")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.252469)
+mesh = SubResource("BoxMesh_af11n")
+surface_material_override/0 = SubResource("StandardMaterial3D_5y2ph")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.246503)
+mesh = SubResource("BoxMesh_af11n")
+surface_material_override/0 = SubResource("StandardMaterial3D_5y2ph")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.507839, 0)
+mesh = SubResource("BoxMesh_mhh8j")
+surface_material_override/0 = SubResource("StandardMaterial3D_d7ejo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0100861, -0.361694, -0.00756836)
+shape = SubResource("BoxShape3D_r83th")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 16384
+collision_mask = 16384
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00220859, 0.00206906, -0.00483489)
+shape = SubResource("BoxShape3D_b2t66")
+
+[node name="Text" type="Label" parent="."]
+visible = false
+offset_top = 563.0
+offset_right = 1156.0
+offset_bottom = 610.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Press E to interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ring" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_0gmby")
+
+[node name="pickup" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_anasi")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+autostart = true
+
+[node name="Subtitles1" type="Label" parent="."]
+visible = false
+offset_left = 11.0
+offset_top = 573.0
+offset_right = 1158.0
+offset_bottom = 649.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "hmmmm...."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Subtitles1"]
+libraries = {
+"": SubResource("AnimationLibrary_7oc24")
+}
+
+[node name="audio1" type="AudioStreamPlayer3D" parent="."]
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

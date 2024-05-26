@@ -93,8 +93,8 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		if !$walk.playing:
+	if direction and !Singleton.listening:
+		if !$walk.playing and is_on_floor():
 			$walk.play()
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed

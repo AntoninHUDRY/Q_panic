@@ -88,6 +88,7 @@ viewport = NodePath("../..")
 [node name="weather" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_lyxw3")
 autoplay = true
+bus = &"Ambient"
 
 [node name="FloorButton3" parent="." instance=ExtResource("6_yxolg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.84927, -0.00999981, -14.1402)

@@ -52,6 +52,82 @@ size = Vector3(0.452606, 1.72339, 0.55127)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b2t66"]
 
+[sub_resource type="Animation" id="Animation_04cd0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["hmmmm...."]
+}
+
+[sub_resource type="Animation" id="Animation_l4qju"]
+resource_name = "audi22"
+length = 20.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.1, 5.3, 9.8, 13.7, 16.8, 16.9, 17.3, 18.5, 19.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "This is still jumping....", "Gosh... firing that neurosurgeon was a bad idea", "After a few weeks of nonstop, sleepless nights of work,", "our engineer ended up with a revolutionary tech:", "The", "The Door!", "", "Come on", "Try it"]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../audio1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_p6pjw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_2aiih"]
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.46103, 2.76676, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "Hello?", "Hello? Helllooo?", "Can you hear me?", "If so, say something..."]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../audio1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_xrapp")
+}],
+"times": PackedFloat32Array(-0.1)
+}
+tracks/1/use_blend = true
+
 [sub_resource type="Animation" id="Animation_b7d3u"]
 resource_name = "audio1"
 length = 59.5
@@ -91,51 +167,6 @@ tracks/1/keys = {
 }
 tracks/1/use_blend = true
 
-[sub_resource type="Animation" id="Animation_2aiih"]
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.46103, 2.76676, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": ["", "Hello?", "Hello? Helllooo?", "Can you hear me?", "If so, say something..."]
-}
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../audio1")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("4_xrapp")
-}],
-"times": PackedFloat32Array(-0.1)
-}
-tracks/1/use_blend = true
-
-[sub_resource type="Animation" id="Animation_04cd0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["hmmmm...."]
-}
-
 [sub_resource type="Animation" id="Animation_nci6w"]
 resource_name = "audio2"
 length = 13.5
@@ -162,37 +193,6 @@ tracks/1/keys = {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource("6_pu0hw")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/1/use_blend = true
-
-[sub_resource type="Animation" id="Animation_l4qju"]
-resource_name = "audi22"
-length = 20.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.1, 5.3, 9.8, 13.7, 16.8, 16.9, 17.3, 18.5, 19.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": ["", "This is still jumping....", "Gosh... firing that neurosurgeon was a bad idea", "After a few weeks of nonstop, sleepless nights of work,", "our engineer ended up with a revolutionary tech:", "The", "The Door!", "", "Come on", "Try it"]
-}
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../audio1")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("7_p6pjw")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -345,9 +345,11 @@ vertical_alignment = 1
 
 [node name="ring" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_0gmby")
+bus = &"Sfx"
 
 [node name="pickup" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_anasi")
+bus = &"Sfx"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.5
@@ -374,6 +376,7 @@ libraries = {
 }
 
 [node name="audio1" type="AudioStreamPlayer3D" parent="."]
+bus = &"Voice"
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]

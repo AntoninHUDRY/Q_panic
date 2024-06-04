@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxmkmxm387wpx"]
+[gd_scene load_steps=6 format=3 uid="uid://dxmkmxm387wpx"]
 
 [ext_resource type="Texture2D" uid="uid://duphmnqkq4ukd" path="res://textures/dark_background.jpg" id="1_ey1a1"]
 [ext_resource type="Script" path="res://Menu/main_menu.gd" id="1_g06n7"]
 [ext_resource type="PackedScene" uid="uid://d1d6gq4xg16vh" path="res://OptionsMenu/options_menu.tscn" id="3_plbon"]
 [ext_resource type="PackedScene" uid="uid://ds1ufo3eqhpbd" path="res://Menu/level_select.tscn" id="4_3etlk"]
+[ext_resource type="AudioStream" uid="uid://ctvk37qop04u6" path="res://audio/22637-Chilled.wav" id="5_3enyw"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -85,6 +86,12 @@ layout_mode = 1
 [node name="LevelSelect" parent="." instance=ExtResource("4_3etlk")]
 visible = false
 layout_mode = 1
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_3enyw")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="button_down" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_button_down"]

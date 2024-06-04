@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://be843fttakfge"]
+[gd_scene load_steps=6 format=3 uid="uid://be843fttakfge"]
 
 [ext_resource type="PackedScene" uid="uid://boveohxx4nnah" path="res://OptionsMenu/windows_mode_button.tscn" id="1_4kl3n"]
 [ext_resource type="PackedScene" uid="uid://b4xu12dj3y7t4" path="res://OptionsMenu/hotkey_rebind_button.tscn" id="1_ewj5b"]
+[ext_resource type="PackedScene" uid="uid://b4ycfoc23vng1" path="res://OptionsMenu/audio_slider_settings.tscn" id="1_p74h4"]
 [ext_resource type="PackedScene" uid="uid://ik3vhgpl18kk" path="res://OptionsMenu/resolution_mode_button.tscn" id="2_3fiek"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ufc8"]
@@ -26,10 +27,8 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 1
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Sound"]
@@ -44,32 +43,34 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Sound/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer/ScrollContainer"]
 layout_mode = 2
 theme_override_constants/separation = 64
-alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+[node name="Audio_Slider_Settings" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_p74h4")]
 layout_mode = 2
-text = "Sound 1"
 
-[node name="Label2" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+[node name="Audio_Slider_Settings2" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_p74h4")]
 layout_mode = 2
-text = "Sound 2"
+bus_name = "Music"
 
-[node name="Label3" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+[node name="Audio_Slider_Settings3" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_p74h4")]
 layout_mode = 2
-text = "Sound 3"
+bus_name = "Sfx"
 
-[node name="Label4" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+[node name="Audio_Slider_Settings4" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_p74h4")]
 layout_mode = 2
-text = "Sound 4"
+bus_name = "Ambient"
 
-[node name="Label5" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+[node name="Audio_Slider_Settings5" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_p74h4")]
 layout_mode = 2
-text = "Sound 5"
+bus_name = "Voice"
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Graphics"]
@@ -176,44 +177,3 @@ action_name = "release"
 layout_mode = 2
 theme_override_constants/separation = 12
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2ufc8")
-
-[node name="Accessibility" type="TabBar" parent="TabContainer"]
-visible = false
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Accessibility"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Accessibility/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 64
-alignment = 1
-
-[node name="Label" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Accessibility 1"
-
-[node name="Label2" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Accessibility 2"
-
-[node name="Label3" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Accessibility 3"
-
-[node name="Label4" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Accessibility 4"
-
-[node name="Label5" type="Label" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Accessibility 5"
